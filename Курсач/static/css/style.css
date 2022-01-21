@@ -6,17 +6,26 @@
     padding-left: 50px;
 }
 
-.title{
+/* .title{
     margin-left: 20px;
-}
+    color: black;
+} */
 
 .logotip{
     max-height: 50px;
 }
 
 .search-form{
-    margin:  40px 0;
+    max-width: 700px;
+    margin:  50px auto;
     display: flex;
+}
+
+.list-group{
+    max-width: 200px;
+    margin:  50px auto;
+    display: flex;
+    color: rgba(39, 150, 11, 0.932);    
 }
 
 .search-field{
@@ -44,4 +53,9 @@
 .search-btn:hover{
     background-color: #f2f5f1;
     color: black;
+}
+
+.navbar{
+    background-color: rgba(39, 150, 11, 0.932);
+    border-bottom: 1px solid #011627;
 }

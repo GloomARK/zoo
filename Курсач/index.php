@@ -9,26 +9,37 @@
 <link rel="stylesheet" href="static/css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <header class="header">
-        <nav>
-            <!-- <img class="logotip" src="images/logo1.png" alt=""> -->
-            <div class="title">
-                Московский зоопарк
-            </div>
-        </nav>
-    </header>
-    <main>
+<nav class="navbar navbar-expand-sm navbar-light fixed-top">
         <div class="container">
-            <div class="search-form">
-                <input type="text" class="search-field">
-                <button class="search-btn">Найти</button>
-            </div>
+            <a class="navbar-brand" href="index.php">
+                <img src="images/logo_187_50.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars-filter" aria-hidden="true"></i>
+                </span>
+            </button>
         </div>
-        <div>
+    </nav>
+    
+    <main>
+        <div class="container-fluid py-5">
+            <form method="post" class="search-form" action="search.php">
+                <input type="text" name="search" class="search-field">
+                <input type="submit" name="submit" class="search-btn" value="Поиск">
+                <!-- <button type="submit" class="search-btn">Найти</button> -->
+            </form>
+        </div>
+        <div class="list-group">
+            <?=$content?>
+        </div>
+        <!-- <div>
             <img class="ehd-file" src="//op.mos.ru/MEDIA/showFile?id=9de8e969-30ae-4e6b-a944-d14ebe1c35f0&size=medium" style="max-width: 100%;" alt="9de8e969-30ae-4e6b-a944-d14ebe1c35f0">
-        </div>
+        </div> -->
     </main>
 </body>
 </html>
