@@ -27,19 +27,13 @@
     </nav>
     
     <main>
-        <div class="container-fluid py-5">
+        <div class="container-fluid pt-5">
             <form method="post" class="search-form" action="search.php">
                 <input type="text" name="search" class="search-field">
                 <input type="submit" name="submit" class="search-btn" value="Поиск">
-                <!-- <button type="submit" class="search-btn">Найти</button> -->
             </form>
         </div>
-        <div class="list-group">
-            <?=$content?>
-        </div>
-        <!-- <div>
-            <img class="ehd-file" src="//op.mos.ru/MEDIA/showFile?id=9de8e969-30ae-4e6b-a944-d14ebe1c35f0&size=medium" style="max-width: 100%;" alt="9de8e969-30ae-4e6b-a944-d14ebe1c35f0">
-        </div> -->
+        <?=$content?>
     </main>
 </body>
 </html>

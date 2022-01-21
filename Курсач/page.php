@@ -20,7 +20,13 @@ $page = mysqli_fetch_assoc($result);
 // $lat = $page["latitude"];
 // $location = $page["cage_location"];
 
-$content = "<img class=\"ehd-file\" src=\"//op.mos.ru/MEDIA/showFile?id=".$page["photo"]."&size=medium\" style=\"max-width: 100%;\" alt=\"".$page["photo"]."\">";
-
+$content = "
+<div class=\"container-fluid mx-1 info-block\">
+	<h4>".$page["kind"]."</h4>
+	<img class=\"ehd-file\" src=\"//op.mos.ru/MEDIA/showFile?id=".$page["photo"]."&size=medium\" style=\"max-height: 400px; height: 100%\" alt=\"".$page["photo"]."\">
+	<div class=\" text-block\">
+		".$page["info"]."
+	</div>
+</div>";
 require("index.php");
 ?>

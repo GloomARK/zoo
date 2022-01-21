@@ -23,8 +23,25 @@
 
 .list-group{
     max-width: 200px;
-    margin:  50px auto;
+    margin:  50px auto 20px;
     display: flex;    
+}
+
+.info-block{
+    max-width: 600px;
+    width: 100%;
+}
+
+.pic-block{
+    max-height: 400;
+    height: 100%;
+}
+
+.text-block{
+    overflow-y: scroll;
+    max-height: 250px;
+    height: 100%;
+    margin-top: 5%;
 }
 
 .search-field{
