@@ -1,11 +1,11 @@
 <?php
-require("connectdb.php");
+require("connect_db.php");
 if(!isset($_GET['id'])){
 	echo "Укажите id страницы.";
 	exit;
 }
 
-$result = mysqli_query($connect, "SELECT * FROM Animals WHERE new_id=".$_GET['id']);
+$result = mysqli_query($conn, "SELECT * FROM Animals WHERE id=".$_GET['id']);
 
 if(!$result || mysqli_num_rows($result) == 0){
 	echo "В базе данных нет страницы с таким id.";
@@ -13,10 +13,14 @@ if(!$result || mysqli_num_rows($result) == 0){
 }
 
 $page = mysqli_fetch_assoc($result);
-$name = $page["kind"];
-$photo = $page["photo"];
-$info = $page["info"];
-$long = $page["longitude"];
-$lat = $page["latitude"];
-$location = $page["cage_location"];
+// $name = $page["kind"];
+// $photo = $page["photo"];
+// $info = $page["info"];
+// $long = $page["longitude"];
+// $lat = $page["latitude"];
+// $location = $page["cage_location"];
+
+$content = "<img class=\"ehd-file\" src=\"//op.mos.ru/MEDIA/showFile?id=".$page["photo"]."&size=medium\" style=\"max-width: 100%;\" alt=\"".$page["photo"]."\">";
+
+require("index.php");
 ?>

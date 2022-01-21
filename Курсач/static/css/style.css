@@ -24,8 +24,7 @@
 .list-group{
     max-width: 200px;
     margin:  50px auto;
-    display: flex;
-    color: rgba(39, 150, 11, 0.932);    
+    display: flex;    
 }
 
 .search-field{
