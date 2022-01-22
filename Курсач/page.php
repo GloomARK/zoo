@@ -7,25 +7,45 @@ if(!isset($_GET['id'])){
 
 $result = mysqli_query($conn, "SELECT * FROM Animals WHERE id=".$_GET['id']);
 
-if(!$result || mysqli_num_rows($result) == 0){
-	echo "В базе данных нет страницы с таким id.";
-	exit;
-}
-
 $page = mysqli_fetch_assoc($result);
-// $name = $page["kind"];
-// $photo = $page["photo"];
-// $info = $page["info"];
-// $long = $page["longitude"];
-// $lat = $page["latitude"];
-// $location = $page["cage_location"];
+$long = $page["longitude"];
+$lat = $page["latitude"];
+?>
+<script>
+	var lat = "<?php echo $lat ?>";
+	var long = "<?php echo $long ?>";
+</script>
+<?php
+$content = "<script type=\"text/javascript\">
+ymaps.ready(init);
 
-$content = "
+function init(){
+    var map = new ymaps.Map('map',{
+        center: [55.76344980, 37.57863189],
+        zoom: 16,
+        controls: ['zoomControl'],
+        behaviors: ['drag']
+    });
+
+	var placemark = new ymaps.Placemark([lat, long], {
+
+	});
+
+	map.geoObjects.add(placemark);
+}
+</script>
 <div class=\"container-fluid mx-1 info-block\">
-	<h4>".$page["kind"]."</h4>
-	<img class=\"ehd-file\" src=\"//op.mos.ru/MEDIA/showFile?id=".$page["photo"]."&size=medium\" style=\"max-height: 400px; height: 100%\" alt=\"".$page["photo"]."\">
-	<div class=\" text-block\">
-		".$page["info"]."
+	<div class=\"row\">
+		<div class=\"col-lg-4\">
+			<h4>".$page["kind"]."</h4>
+			<img class=\"ehd-file\" src=\"//op.mos.ru/MEDIA/showFile?id=".$page["photo"]."&size=medium\" style=\"max-height: 400px; height: 100%; max-width: 600px; width: 100%;\" alt=\"".$page["photo"]."\">
+			<div class=\" text-block\">
+				".$page["info"]."
+			</div>
+		</div>
+		<div class=\"col-lg-8\">
+			<div id=\"map\" class=\"map\"></div>
+		</div>
 	</div>
 </div>";
 require("index.php");

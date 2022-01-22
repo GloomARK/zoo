@@ -9,9 +9,9 @@ if(isset($_POST['submit'])){
 $content = "<div class=\"list-group\">";
 
 if(!$result || mysqli_num_rows($result) == 0){
-	echo "Таких животных в зоопарке нет.";
-	exit;
+	$content .= "<h4>Результатов по запросу поиска не найдено.</h4></div>";
 }
+
 else{
     while($page = mysqli_fetch_assoc($result)){
         $content .= "<a href=\"page.php?id=".$page["id"]."\" class=\"list-group-item list-group-item-action\" aria-current=\"true\">".$page["kind"]."</a>";
