@@ -26,9 +26,7 @@ function init(){
         controls: ['zoomControl'],
         behaviors: ['drag']
     });
-
 	var placemark = new ymaps.Placemark([lat, long], {
-
 	});
 
 	map.geoObjects.add(placemark);
@@ -44,7 +42,9 @@ function init(){
 			</div>
 		</div>
 		<div class=\"col-lg-8\">
-			<div id=\"map\" class=\"map\"></div>
+			<div class=\"map-block\">
+				<div id=\"map\" class=\"map\"></div>
+			</div>
 		</div>
 	</div>
 </div>";

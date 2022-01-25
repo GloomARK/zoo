@@ -23,7 +23,6 @@
             </a>
         </div>
     </nav>
-    
     <main>
         <?php
         if (isset($_GET['search'])){
